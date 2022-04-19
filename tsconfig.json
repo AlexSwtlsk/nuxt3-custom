@@ -3,5 +3,5 @@
   "compilerOptions": {
     "types": []
   },
-  "exclude": ["node_modules", ".nuxt", "dist"]
+  "exclude": ["node_modules", "dist"]
 }
