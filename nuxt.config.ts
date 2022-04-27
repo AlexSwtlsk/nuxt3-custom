@@ -1,4 +1,4 @@
-import { defineNuxtConfig, NuxtConfig } from 'nuxt3'
+import { defineNuxtConfig, NuxtConfig } from 'nuxt'
 
 const config: NuxtConfig = {
   head: {
