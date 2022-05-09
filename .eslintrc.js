@@ -53,7 +53,5 @@ module.exports = {
   env: {
     node: true,
     browser: true,
-    'jest/globals': true,
   },
-  plugins: ['jest', 'prettier'],
 }
