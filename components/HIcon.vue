@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import * as solid from '@heroicons/vue/solid'
-import * as outline from '@heroicons/vue/outline'
+import * as solid from '@heroicons/vue/solid/index.js'
+import * as outline from '@heroicons/vue/outline/index.js'
 
 const props = defineProps({
   name: {
