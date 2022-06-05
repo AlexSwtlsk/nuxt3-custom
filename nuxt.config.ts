@@ -17,7 +17,14 @@ const config: NuxtConfig = {
 
   plugins: [],
 
-  components: true,
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+      ignore: ['**/*.stories.ts'],
+      extensions: ['vue'],
+    },
+  ],
 
   buildModules: [],
 
