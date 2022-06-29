@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+defineComponent({
+  name: 'IndexPage',
+})
+</script>
+
 <template>
   <div>
     <p class="text-red-500 font-bold">It works</p>
