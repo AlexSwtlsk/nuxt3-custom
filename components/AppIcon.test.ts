@@ -1,7 +1,7 @@
 import { describe, expect, afterEach, vi, beforeEach, test } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 
-import HIcon from './HIcon.vue'
+import AppIcon from './AppIcon.vue'
 const iconName = ref('Bell')
 
 vi.mock('@heroicons/vue/solid', () => {
@@ -19,10 +19,10 @@ vi.mock('@heroicons/vue/outline', () => {
 describe('Test component', () => {
   let wrapper
 
-  expect(HIcon).toBeTruthy()
+  expect(AppIcon).toBeTruthy()
 
   beforeEach(() => {
-    wrapper = shallowMount(HIcon, {
+    wrapper = shallowMount(AppIcon, {
       props: {
         name: iconName.value,
       },

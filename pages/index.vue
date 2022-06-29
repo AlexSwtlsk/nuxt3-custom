@@ -2,7 +2,7 @@
   <div>
     <p class="text-red-500 font-bold">It works</p>
 
-    <HIcon
+    <AppIcon
       name="Bell"
       class="h-6 w-6"
     />
