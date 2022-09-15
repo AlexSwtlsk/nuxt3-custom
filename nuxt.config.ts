@@ -1,4 +1,4 @@
-import { defineNuxtConfig, NuxtConfig } from 'nuxt'
+import type { NuxtConfig } from 'nuxt/config'
 
 const config: NuxtConfig = {
   head: {
