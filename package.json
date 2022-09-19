@@ -4,9 +4,13 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "node .output/server/index.mjs",
-    "lintfix": "eslint --ignore-path .gitignore --ext .ts,.js,.vue . --fix",
+    "lint": "eslint --ignore-path .gitignore --ext .ts,.js,.vue .",
+    "lintfix": "yarn lint --fix",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "security": "yarn audit || [ $? -lt 16 ] #1-INFO 2-LOW 4-MODERATE 8-HIGH 16-CRITICAL",
+    "ci": "yarn install --immutable --immutable-cache --check-cache #npm ci equivalent",
+    "check:all": "yarn build && yarn security && yarn lint && yarn test run"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^11.0.0",

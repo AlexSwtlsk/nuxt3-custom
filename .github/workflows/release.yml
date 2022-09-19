@@ -1,0 +1,70 @@
+# Document: https://help.github.com/ja/actions
+# GitHub Pages Deployment - Nuxt.js
+name: DEPLOYMENT
+
+on:
+  push:
+    branches:
+      - main
+  
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+      - '!*' #ignore all other branches
+
+
+env:
+  NODE_VERSION: '18.8.0'
+  SERVICE_NAME: 'nuxt3-custom'
+  #REGISTRY_HOSTNAME: 'your registry docker'
+
+jobs:
+  deploy:
+    name: Deployment
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [18]
+
+    steps:
+      - name: Checkout 🛎 ${{ matrix.node }}
+        uses: actions/checkout@master
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: ${{ matrix.node }}
+          check-latest: true
+
+      - name: Get yarn cache directory path 🛠
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2.1.7
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn ci
+      
+      - name: Build 👨🏻‍💻
+        run: yarn check:all
+
+      # uncomment to use this with your Docker registry 
+      # - if: success()
+      #   name: deploy docker
+      #   env: 
+      #     NODE_ENV: production
+      #   run: docker build -t ${{ env.REGISTRY_HOSTNAME }}/${{ env.SERVICE_NAME }}:latest -f ./docker/Dockerfile . 
+        
+      # - name: Publish docker image
+      #   run: |
+      #     docker push ${{ env.REGISTRY_HOSTNAME }}/${{ env.SERVICE_NAME }}:latest
