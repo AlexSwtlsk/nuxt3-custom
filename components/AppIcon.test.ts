@@ -4,13 +4,13 @@ import { shallowMount } from '@vue/test-utils'
 import AppIcon from './AppIcon.vue'
 const iconName = ref('Bell')
 
-vi.mock('@heroicons/vue/24/solid/index', () => {
+vi.mock('@heroicons/vue/24/solid/index.d', () => {
   return {
     BellIcon: 'loaded',
   }
 })
 
-vi.mock('@heroicons/vue/outline', () => {
+vi.mock('@heroicons/vue/24/outline/index.d', () => {
   return {
     BellIcon: 'loaded',
   }
@@ -33,7 +33,7 @@ describe('Test component', () => {
     vi.restoreAllMocks()
   })
 
-  test('should works', () => {
+  test('should work', () => {
     expect(wrapper.vm.outline).toBe(false)
     expect(wrapper.vm.icon).toEqual('loaded')
   })

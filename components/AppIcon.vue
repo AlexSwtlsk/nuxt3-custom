@@ -19,6 +19,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const icon = computed(() => {
   const localIcon = (props.outline ? outline : solid)[props.name + 'Icon']
-  return (localIcon ?? solid.QuestionMarkCircleIcon) as string
+  return (localIcon ?? solid.QuestionMarkCircleIcon)
 })
 </script>
