@@ -1,6 +1,4 @@
-import type { NuxtConfig } from 'nuxt/config'
-
-const config: NuxtConfig = {
+const config = {
   head: {
     title: 'Nuxt 3 custom install',
     htmlAttrs: {
@@ -29,16 +27,12 @@ const config: NuxtConfig = {
   buildModules: [],
 
   modules: [],
-
-  build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
     },
   },
+  build: {},
 }
 export default defineNuxtConfig(config)
