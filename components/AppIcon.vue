@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import * as solid from '@heroicons/vue/24/solid/index.d'
-import * as outline from '@heroicons/vue/24/outline/index.d'
+import * as solid from '@heroicons/vue/24/solid/index'
+import * as outline from '@heroicons/vue/24/outline/index'
 
 interface Props {
   name: string
