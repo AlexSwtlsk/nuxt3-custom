@@ -4,13 +4,13 @@ import { shallowMount } from '@vue/test-utils'
 import AppIcon from './AppIcon.vue'
 const iconName = ref('Bell')
 
-vi.mock('@heroicons/vue/24/solid/index', () => {
+vi.mock('@heroicons/vue/24/solid', () => {
   return {
     BellIcon: 'loaded',
   }
 })
 
-vi.mock('@heroicons/vue/24/outline/index', () => {
+vi.mock('@heroicons/vue/24/outline', () => {
   return {
     BellIcon: 'loaded',
   }
