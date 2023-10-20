@@ -27,3 +27,10 @@ yarn build
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+
+## Docker
+
+```bash
+docker build . -t nuxt-app
+docker run -p 8080:3000 -d nuxt-app
+```
