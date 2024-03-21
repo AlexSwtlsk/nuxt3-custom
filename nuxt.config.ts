@@ -23,10 +23,15 @@ const config = {
       extensions: ['vue'],
     },
   ],
-
+  runtimeConfig: {
+    public: {
+      test: '',
+    },
+  },
   buildModules: [],
 
   modules: [],
+
   postcss: {
     plugins: {
       tailwindcss: {},
