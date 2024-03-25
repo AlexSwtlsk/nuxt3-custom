@@ -1,4 +1,5 @@
 const config = {
+  devtools: { enabled: true },
   head: {
     title: 'Nuxt 3 custom install',
     htmlAttrs: {
