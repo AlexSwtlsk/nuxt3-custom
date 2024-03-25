@@ -15,7 +15,7 @@ on:
 
 
 env:
-  NODE_VERSION: '18.8.0'
+  NODE_VERSION: '21'
   SERVICE_NAME: 'nuxt3-custom'
   #REGISTRY_HOSTNAME: 'your registry docker'
 
@@ -27,7 +27,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [18]
+        node: [21]
 
     steps:
       - name: Checkout 🛎 ${{ matrix.node }}

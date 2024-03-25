@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import * as solid from '@heroicons/vue/24/solid'
-import * as outline from '@heroicons/vue/24/outline'
+import * as solidImport from '@heroicons/vue/24/solid'
+import * as outlineImport from '@heroicons/vue/24/outline'
 
 interface Props {
   name: string
@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const icon = computed(() => {
-  const localIcon = (props.outline ? outline : solid)[props.name + 'Icon']
-  return (localIcon ?? solid.QuestionMarkCircleIcon)
+  const localIcon = (props.outline ? outlineImport : solidImport)[props.name + 'Icon']
+  return (localIcon ?? solidImport.QuestionMarkCircleIcon)
 })
 </script>
