@@ -31,5 +31,8 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.1",
     "@heroicons/vue": "^2.0.11"
+  },
+  "resolutions": {
+    "jackspeak": "2.1.1"
   }
 }
