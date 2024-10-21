@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - main
 env:
-  NODE_VERSION: '21.7.1'
+  NODE_VERSION: '22.9.0'
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [21.7.1]
+        node: [22.9.0]
 
     steps:
       - name: Checkout 🛎 ${{ matrix.node }}
